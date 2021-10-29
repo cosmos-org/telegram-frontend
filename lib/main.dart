@@ -10,20 +10,203 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome A',
-      home: SafeArea(
-          child: Scaffold(
-            appBar: AppBar(
-              title: const Text("Tán Đổ Crush"),
-              backgroundColor: Colors.blue,
-            ),
-            body: const Center(
-              child: Text("Điều đó không làm MU hết vô đối được đâu")
-            )
-          )
-      )
-    );
+    return const MaterialApp(
+      title: "COSMOS",
+      home: LogInPage()
+      );
+  }
+}
+
+class LogInPage extends StatefulWidget {
+  const LogInPage({Key? key}) : super(key: key);
+  @override
+  State<StatefulWidget> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogInPage> {
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+          appBar: AppBar(
+            title: const Text('COSMOS'),
+          ),
+          body: Padding(
+              padding: EdgeInsets.all(10),
+              child: ListView(
+                children: <Widget>[
+                  Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        'Welcome!',
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 30),
+                      )),
+                  Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        'Sign in',
+                        style: TextStyle(fontSize: 20),
+                      )),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      controller: phoneController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Phone',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    child: TextField(
+                      obscureText: true,
+                      controller: passwordController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Password',
+                      ),
+                    ),
+                  ),
+                  FlatButton(
+                    onPressed: () {
+                      //forgot password screen
+                    },
+                    textColor: Colors.blue,
+                    child: Text('Forgot Password'),
+                  ),
+                  Container(
+                      height: 50,
+                      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      child: RaisedButton(
+                        textColor: Colors.white,
+                        color: Colors.blue,
+                        child: Text('Login'),
+                        onPressed: () {
+                          print(phoneController.text);
+                          print(passwordController.text);
+                        },
+                      )),
+                  Container(
+                      child: Row(
+                        children: <Widget>[
+                          const Text('Does not have any account?',
+                          style: TextStyle(fontSize: 13)),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.blue
+                            ),
+                            child: const Text(
+                              'Create a new one',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  decoration: TextDecoration.underline),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => SignUpPage()),
+                              );
+                            },
+                          )
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.center,
+                      ))
+                ],
+              )));
+    }
+}
+
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUpPage>{
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold (
+      appBar: AppBar (
+        title: const Text("Telegram")
+      ),
+      body: Padding(
+          padding: EdgeInsets.all(10),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    'Sign up',
+                    style: TextStyle(fontSize: 20),
+                  )),
+              signUpContainer(firstNameController, "First Name"),
+              signUpContainer(lastNameController, "Last Name"),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                  controller: phoneController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Phone No.',
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                  obscureText: true,
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                  ),
+                ),
+              ),
+              Container(
+                  height: 60,
+                  padding: EdgeInsets.all(10),
+                  child: RaisedButton(
+                    textColor: Colors.white,
+                    color: Colors.blue,
+                    child: Text('Sign Up'),
+                    onPressed: () {
+                      print("Sign Up request");
+                      print(phoneController.text);
+                      print(passwordController.text);
+                      // TODO Attach Sign up API
+                    },
+                  ))
+            ],
+          )));
+  }
+
+  Container signUpContainer(TextEditingController controller, String label) {
+    return Container(
+              padding: EdgeInsets.all(10),
+              child: TextField(
+                controller: controller,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: label,
+                ),
+              ),
+            );
   }
 }
 
