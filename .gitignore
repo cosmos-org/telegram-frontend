@@ -2,3 +2,10 @@
 .DS_Store
 /build
 /.dart_tool
+.atom/
+.packages
+.pub/
+ios/.generated/
+packages
+pubspec.lock
+.flutter-plugins
