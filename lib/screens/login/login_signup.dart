@@ -82,6 +82,8 @@ class _LogInState extends State<LogInPage> {
                         pressAttention = true;
                         String phonenumber = phoneController.text;
                         String password = passwordController.text;
+                        // TODO Checking input condition
+
                         String body = '{"phonenumber": "$phonenumber", "password": "$password"}';
                         Map<String, String> headers = {"Content-type": "application/json"};
                         String loginUrl = hostname + userLogInEndpoint;
@@ -91,12 +93,10 @@ class _LogInState extends State<LogInPage> {
                         String respBody = resp.body;
                         print(statusCode);
                         print(respBody);
-
-                        print(statusCode);
                         if (statusCode < 300) {
-                          showAlertDialog(context);
+                          // TODO Nav to Home Page
                         } else {
-                          // TODO Add Error Alert
+                          logInAlert(context, "error", "$respBody :(", "Retry");
                         }
                       },
                     )),
@@ -193,6 +193,9 @@ class _SignUpState extends State<SignUpPage> {
                         String password = passwordController.text;
                         String username = firstNameController.text +
                             " " + lastNameController.text;
+
+                        // TODO Checking input condition
+
                         String body = '{"username": "$username", '
                             '"phonenumber": "$phonenumber",'
                             '"password": "$password"}';
@@ -201,9 +204,9 @@ class _SignUpState extends State<SignUpPage> {
                         int statusCode = resp.statusCode;
                         print(statusCode);
                         if (statusCode < 300) {
-                          showAlertDialog(context);
+                          signUpAlert(context, "success", "Sign Up Successfully", "Let's Log in");
                         } else {
-                          // TODO Add Error Alert
+                          signUpAlert(context, "error", "Sign up unsuccessfully", "Retry");
                         }
                       },
                     ))
@@ -225,28 +228,74 @@ class _SignUpState extends State<SignUpPage> {
   }
 }
 
-showAlertDialog(BuildContext context) {
+inputValidation(String username, String phonenumber, String password) {
+}
 
+logInAlert(BuildContext context, String type, String message, String button) {
+  Color textColor = kPrimaryColor;
+  switch(type) {
+    case "error":
+      textColor = kErrorColor;
+      break;
+    case "warning":
+      textColor = kWarningColor;
+      break;
+  }
   // set up the button
   Widget okButton = TextButton(
-    child: const Text("Let's Log in",
+    child: Text(button,
     style: TextStyle(
-      color: kPressedColor
+      color: textColor
     )),
     onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const LogInPage()),
-      );
+      Navigator.of(context).pop();
     },
   );
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     backgroundColor: kSecondaryColor,
-    title: const Text("Sign Up Successfully",
-    style: TextStyle(color: kPressedColor)),
+    title: Text(message,
+    style: TextStyle(color: textColor)),
     // content: const Text("You have created a new COSMOS account!"),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+signUpAlert(BuildContext context, String type, String message, String button) {
+  Color textColor = kPrimaryColor;
+  if (type == "error") {
+    textColor = kErrorColor;
+  }
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text(button,
+        style: TextStyle(
+            color: textColor
+        )),
+    onPressed: () {
+      if (type == "success") {
+        Navigator.of(context).pop();
+      }
+      Navigator.of(context).pop();
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    backgroundColor: kSecondaryColor,
+    title: Text(message,
+        style: TextStyle(color: textColor)),
     actions: [
       okButton,
     ],
