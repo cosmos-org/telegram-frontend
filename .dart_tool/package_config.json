@@ -39,7 +39,7 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///Users/sonmt/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.3",
+      "rootUri": "file:///Users/sonmt/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -68,6 +68,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "http",
+      "rootUri": "file:///Users/sonmt/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/sonmt/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///Users/sonmt/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
       "packageUri": "lib/",
@@ -88,6 +100,12 @@
     {
       "name": "path",
       "rootUri": "file:///Users/sonmt/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///Users/sonmt/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -152,7 +170,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-10-29T14:22:42.108370Z",
+  "generated": "2021-11-06T09:00:03.355380Z",
   "generator": "pub",
   "generatorVersion": "2.14.3"
 }
