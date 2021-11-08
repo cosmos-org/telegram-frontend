@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.project_telegram",
+  "applicationId": "com.example.fluttergram",
   "variantName": "processDebugResources",
   "elements": [
     {

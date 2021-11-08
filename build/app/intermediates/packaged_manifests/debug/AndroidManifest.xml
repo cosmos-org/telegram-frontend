@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.project_telegram"
+    package="com.example.fluttergram"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -17,9 +17,9 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="project_telegram" >
+        android:label="fluttergram" >
         <activity
-            android:name="com.example.project_telegram.MainActivity"
+            android:name="com.example.fluttergram.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"

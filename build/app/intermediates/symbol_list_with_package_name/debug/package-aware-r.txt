@@ -1,4 +1,4 @@
-com.example.project_telegram
+com.example.fluttergram
 attr alpha
 attr font
 attr fontProviderAuthority

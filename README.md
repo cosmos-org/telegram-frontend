@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 # project_telegram
 
 A new Flutter project.
+=======
+# Fluttergram
+
+A Flutter social network application, inpired on Instagram
+>>>>>>> Stashed changes
 
 ## Getting Started
 
