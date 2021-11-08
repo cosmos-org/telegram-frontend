@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:project_telegram/post_detail.dart';
 import 'package:project_telegram/media_detail.dart';
 // var backgroundColor = Colors.grey[200];
@@ -25,10 +26,21 @@ List<String> storyUrl = [
 ];
 class MyApp extends StatelessWidget {
   // const MyApp({Key? key}) : super(key: key);
+=======
+import 'screens/login/login_signup.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+>>>>>>> c769ff2dc64db1ced2b765d19cbda918a0e87428
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return  MaterialApp(
       home: Scaffold(
         backgroundColor: backgroundColor,
@@ -156,3 +168,11 @@ class MyApp extends StatelessWidget {
 //     );
 //   }
 // }
+=======
+    return const MaterialApp(
+      title: "COSMOS",
+      home: LogInPage()
+      );
+  }
+}
+>>>>>>> c769ff2dc64db1ced2b765d19cbda918a0e87428
