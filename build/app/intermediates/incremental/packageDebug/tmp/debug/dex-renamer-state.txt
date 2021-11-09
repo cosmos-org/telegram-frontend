@@ -1,4 +1,4 @@
-#Tue Nov 02 00:01:29 ICT 2021
-base.0=C\:\\Soure_code\\Cross Plattform App Development\\Tele_app_Frontend\\telegram-frontend\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Tue Nov 09 13:25:46 ICT 2021
+base.0=/home/duong/AndroidStudioProjects/telegram-frontend/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

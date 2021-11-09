@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Soure_code\\Cross Plattform App Development\\Tele_app_Frontend\\telegram-frontend\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "/home/duong/AndroidStudioProjects/telegram-frontend/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Soure_code\\Cross Plattform App Development\\Tele_app_Frontend\\telegram-frontend\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "/home/duong/AndroidStudioProjects/telegram-frontend/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
-                        "startOffsets": "175,829",
+                        "startOffsets": "172,815",
                         "endLines": "7,16",
                         "endColumns": "12,12",
-                        "endOffsets": "471,995"
+                        "endOffsets": "464,979"
                     },
                     "to": {
                         "startLines": "2,7",
