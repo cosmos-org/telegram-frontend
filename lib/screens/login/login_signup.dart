@@ -101,6 +101,7 @@ class _LogInState extends State<LogInPage> {
                         if (statusCode < 300) {
                           dynamic body = jsonDecode(resp.body);
                           User currentUser = User.fromJson(body);
+                          print(currentUser);
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => HomePage(currentUser: currentUser)),

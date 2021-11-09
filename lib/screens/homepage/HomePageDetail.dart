@@ -87,6 +87,8 @@ class Friend{
               (item) => User.getFriend(item)
       ).toList();
       List<User> users = U.cast<User>();
+      // print('User lisst')
+      // print(users)
       return users;
     } else {
       throw "Unable to retrieve list friend.";

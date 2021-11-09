@@ -24,8 +24,8 @@ class User {
         phonenumber: json['data']['phonenumber'],
         username: json['data']['username'],
         password: '',
-        avatar: Image.fromJson(json['data']['avatar']),
-        cover_image: Image.fromJson(json['data']['cover_image']),
+        // avatar: Image.fromJson(json['data']['avatar']),
+        // cover_image: Image.fromJson(json['data']['cover_image']),
         token: json['token']
     );}
 
