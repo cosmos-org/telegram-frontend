@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:project_telegram/constants.dart';
+import 'package:project_telegram/models/user.dart';
 import 'dart:async';
+
+import 'package:project_telegram/screens/homepage/HomePage.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({Key? key}) : super(key: key);
@@ -94,7 +99,12 @@ class _LogInState extends State<LogInPage> {
                         print(statusCode);
                         print(respBody);
                         if (statusCode < 300) {
-                          // TODO Nav to Home Page
+                          dynamic body = jsonDecode(resp.body);
+                          User currentUser = User.fromJson(body);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage(currentUser: currentUser)),
+                          );
                         } else {
                           logInAlert(context, "error", "$respBody :(", "Retry");
                         }
