@@ -27,7 +27,7 @@ class _LogInState extends State<LogInPage> {
               children: <Widget>[
                 Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.fromLTRB(10, 70, 10, 30),
                     child: const Text(
                       'Welcome!',
                       style: TextStyle(
@@ -35,13 +35,13 @@ class _LogInState extends State<LogInPage> {
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
-                Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(10),
-                    child: const Text(
-                      'Sign in',
-                      style: TextStyle(fontSize: 20),
-                    )),
+                // Container(
+                //     alignment: Alignment.center,
+                //     padding: EdgeInsets.all(10),
+                //     child: const Text(
+                //       'Log in',
+                //       style: TextStyle(fontSize: 20),
+                //     )),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
@@ -54,7 +54,7 @@ class _LogInState extends State<LogInPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                   child: TextField(
                     obscureText: true,
                     controller: passwordController,
@@ -64,20 +64,20 @@ class _LogInState extends State<LogInPage> {
                     ),
                   ),
                 ),
-                FlatButton(
-                  onPressed: () {
-                    //forgot password screen
-                  },
-                  textColor: kPrimaryColor,
-                  child: Text('Forgot Password'),
-                ),
+                // FlatButton(
+                //   onPressed: () {
+                //     //forgot password screen
+                //   },
+                //   textColor: kPrimaryColor,
+                //   child: Text('Forgot Password'),
+                // ),
                 Container(
                     height: 50,
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: pressAttention ? kPrimaryColor : kPressedColor,
-                      child: Text('Login'),
+                      child: Text('Log in'),
                       onPressed: () async {
                         pressAttention = true;
                         String phonenumber = phoneController.text;
