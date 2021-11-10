@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:project_telegram/constants.dart';
+import 'package:project_telegram/models/user.dart';
 import 'dart:async';
+
+import 'package:project_telegram/screens/homepage/homepage.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({Key? key}) : super(key: key);
@@ -35,13 +40,6 @@ class _LogInState extends State<LogInPage> {
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
-                // Container(
-                //     alignment: Alignment.center,
-                //     padding: EdgeInsets.all(10),
-                //     child: const Text(
-                //       'Log in',
-                //       style: TextStyle(fontSize: 20),
-                //     )),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
@@ -64,13 +62,6 @@ class _LogInState extends State<LogInPage> {
                     ),
                   ),
                 ),
-                // FlatButton(
-                //   onPressed: () {
-                //     //forgot password screen
-                //   },
-                //   textColor: kPrimaryColor,
-                //   child: Text('Forgot Password'),
-                // ),
                 Container(
                     height: 50,
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -88,14 +79,21 @@ class _LogInState extends State<LogInPage> {
                         Map<String, String> headers = {"Content-type": "application/json"};
                         String loginUrl = hostname + userLogInEndpoint;
                         Response resp = await post(loginUrl, headers: headers, body: body);
+
                         int statusCode = resp.statusCode;
-                        String respBody = resp.body;
-                        print(statusCode);
-                        print(respBody);
+                        dynamic respBody = jsonDecode(resp.body);
+                        String message = respBody["message"];
+                        // print(statusCode);
+                        // print(message);
                         if (statusCode < 300) {
-                          // TODO Nav to Home Page
+                          User currentUser = User.fromJson(respBody);
+                          print(currentUser);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage(currentUser: currentUser)),
+                          );
                         } else {
-                          logInAlert(context, "error", "$respBody :(", "Retry");
+                          logInAlert(context, "error", "$message.", "Retry");
                         }
                       },
                     )),
