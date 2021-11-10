@@ -88,7 +88,6 @@ class _LogInState extends State<LogInPage> {
                         Map<String, String> headers = {"Content-type": "application/json"};
                         String loginUrl = hostname + userLogInEndpoint;
                         Response resp = await post(loginUrl, headers: headers, body: body);
-
                         int statusCode = resp.statusCode;
                         String respBody = resp.body;
                         print(statusCode);
