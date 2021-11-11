@@ -1,4 +1,4 @@
-#Tue Nov 09 13:25:46 ICT 2021
+#Thu Nov 11 13:42:35 ICT 2021
 base.0=/home/duong/AndroidStudioProjects/telegram-frontend/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
