@@ -95,7 +95,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
   http:
     dependency: "direct main"
     description:
@@ -111,7 +110,6 @@ packages:
     source: hosted
     version: "3.1.4"
   lints:
-=======
   focused_menu:
     dependency: "direct main"
     description:
@@ -126,21 +124,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  http:
->>>>>>> messages
-    dependency: transitive
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.13.4"
-  http_parser:
-    dependency: transitive
-    description:
-      name: http_parser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.0"
   matcher:
     dependency: transitive
     description:
@@ -162,7 +145,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-<<<<<<< HEAD
   pedantic:
     dependency: transitive
     description:
@@ -170,7 +152,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.1"
-=======
   path_provider:
     dependency: transitive
     description:
@@ -227,7 +208,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
->>>>>>> messages
   sky_engine:
     dependency: transitive
     description: flutter
