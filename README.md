@@ -1,4 +1,4 @@
-## COSMOS - Chat and social networking app
+## COSMOS - Chat and social networking app, inspired by Instagram
 
 ** Configuration & Systems:
     - Framework: Flutter & Dart

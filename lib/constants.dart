@@ -20,3 +20,9 @@ const friendGetListEndpoint = "/api/v1/friends/list";
 
 //API For Post
 const postGetListEndpoint = "/api/v1/posts/list";
+
+const usernameFontSize = 20.0;
+const postContentFontSize = 16.0;
+const lightFontWeight = FontWeight.w200;
+const normalFontWeight = FontWeight.normal;
+const boldFontWeight = FontWeight.bold;
